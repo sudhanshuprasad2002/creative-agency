@@ -1,0 +1,106 @@
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    gap: 10px;
+    position: relative;
+}
+
+header h2 {
+    margin: 0;
+}
+
+header .site-links,
+header .site-links>a:hover {
+    color: var(--color-primary);
+}
+
+header .site-links>a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.4s ease-out;
+}
+
+header .site-links>a:hover::after {
+    width: 100%;
+}
+
+header .btn-rect {
+    border-radius: 5px;
+    padding: 7px 15px;
+    background-color: var(--color-primary);
+}
+
+header .btn-rect,
+header .btn-rect:hover {
+    color: var(--color-on-primary);
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    padding: 15px 20px;
+    text-align: center;
+    gap: 20px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#menu_btn {
+    display: none;
+    width: 2em;
+    height: 2em;
+    align-items: center;
+    justify-content: center;
+    appearance: none;
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--color-primary);
+    z-index: 2;
+}
+
+#menu_btn::before {
+    content: '\f0c9';
+}
+
+#menu_btn:checked::before {
+    content: '\f00d';
+    color: var(--color-on-primary);
+}
+
+@media screen and (max-width:600px) {
+    header .site-links>a,
+    header .btn-rect {
+        display: none;
+    }
+    #menu a {
+        display: inline-block;
+        font-size: 25px;
+        font-weight: 500;
+    }
+    #menu_btn {
+        display: flex;
+    }
+    #menu_btn:checked~#menu {
+        opacity: 1;
+        pointer-events: all;
+    }
+}

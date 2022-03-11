@@ -1,0 +1,153 @@
+body {
+    background-color: #f9f9fb;
+}
+
+#blogs_section {
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.blogs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    grid-auto-rows: min-content;
+    gap: 15px 20px;
+    min-height: auto;
+}
+
+.blog {
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 25px #0001;
+}
+
+.blog>img {
+    width: 100%;
+    aspect-ratio: 2/1;
+    object-fit: cover;
+}
+
+.blog>div {
+    padding: 15px 20px;
+    overflow-x: hidden;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog>div>:nth-last-child(2) {
+    flex-grow: 1;
+}
+
+.blogs-grid .blog:first-child {
+    grid-column: 1/-1;
+}
+
+.blog h3,
+.blog p {
+    margin-top: 0;
+}
+
+.blog>div>div {
+    display: flex;
+    color: gray;
+}
+
+.blog time {
+    flex-grow: 1;
+}
+
+aside>div:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+aside h5 {
+    margin: 0 0 10px 0;
+}
+
+#recent_blogs>div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#recent_blogs .blog {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    border-radius: 10px;
+}
+
+#recent_blogs .blog>div {
+    padding: 10px 15px;
+}
+
+#recent_blogs h3 {
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+#recent_blogs img {
+    width: 70px;
+    height: 70px;
+}
+
+#featured img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 10px;
+}
+
+#invite_section {
+    background-color: #eee;
+    margin: 100px 0;
+    padding: 50px 0;
+}
+
+#invite_section img {
+    border-radius: 10px;
+    width: 100%;
+}
+
+@media only screen and (max-width:600px) {
+    #blogs_section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    #blogs_section {
+        padding: 0 20px;
+    }
+    #invite_section {
+        padding: 50px 0 0 0;
+    }
+    #invite_section .feature {
+        padding: 0;
+    }
+    #invite_section .text {
+        padding: 0 20px;
+    }
+    #invite_section img {
+        border-radius: 0;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .blogs-grid .blog:first-child {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+    }
+    .blogs-grid>.blog:first-child>img {
+        width: 100%;
+        aspect-ratio: 1;
+    }
+}

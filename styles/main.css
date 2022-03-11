@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600;700;800&display=swap');
+body {
+    font-family: Catamaran;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body>.feature {
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.feature h1 {
+    margin: 0;
+}
+
+.feature h4 {
+    color: var(--color-primary);
+    margin-bottom: 5px;
+}
+
+.feature>div {
+    flex-grow: 1;
+    flex-basis: 0;
+    width: 100%;
+}
+
+.feature .btn-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.feature .btn-row>:first-child {
+    padding: 10px 25px;
+    border-radius: 200px;
+    background-color: var(--color-secondary);
+    color: var(--color-on-secondary);
+}
+
+.feature .btn-row>:nth-child(2) {
+    color: var(--color-primary);
+}
+
+.feature .graphic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(5px 10px 10px #0004);
+}
+
+.feature .graphic>img {
+    width: 100%;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#hero_section {
+    flex-grow: 1;
+}
+
+@media only screen and (max-width:850px) {
+    .feature {
+        flex-direction: column;
+        align-items: unset;
+        justify-content: center;
+    }
+    .feature>div {
+        flex-grow: 0;
+    }
+    .feature .graphic>img {
+        max-width: 500px;
+        margin: auto;
+    }
+    #hero_section {
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    .feature {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.logo {
+    font-weight: 600;
+    font-family: Catamaran;
+    font-size: 28px;
+}
+
+@media only screen and (max-width:600px) {
+    .feature .graphic {
+        display: none;
+    }
+}
+
+.active {
+    border-bottom: 2px solid #503ee1;
+}

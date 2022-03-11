@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+
+ :root {
+    --color-primary: #503ee1;
+    --color-primary-200: #f2eeff;
+    --color-secondary: #884dd4;
+    --color-on-primary: white;
+    --color-on-secondary: white;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    color: gray;
+}
+
+button,
+input[type='submit'] {
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
+}
+
+.site-links {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.site-links>a {
+    position: relative;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.social-links>a {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
